@@ -4,6 +4,7 @@
   "private": true,
   "author": "udev",
   "license": "GPL-3.0-only",
+  "homepage": "./",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@burner-wallet/burner-connect-provider": "^0.1.1",
