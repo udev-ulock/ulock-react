@@ -1,0 +1,6 @@
+{
+    "mainnet":{
+        "ueth":    "0x395C8dB957d743a62Ac3aAAa4574553bcf2380b3",
+        "ulocker": "0x7cA5FB20FDD54867e250436c4A9686ceeB88A18B"
+    }
+}
