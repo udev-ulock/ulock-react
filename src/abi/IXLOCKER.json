@@ -18,7 +18,7 @@
         },
         {
           "internalType": "uint256",
-          "name": "wadUeth",
+          "name": "wadXeth",
           "type": "uint256"
         }
       ],
@@ -57,7 +57,7 @@
         },
         {
           "internalType": "uint256",
-          "name": "wadUeth",
+          "name": "wadXeth",
           "type": "uint256"
         },
         {

@@ -1,6 +1,10 @@
 {
     "mainnet":{
-        "ueth":    "0x395C8dB957d743a62Ac3aAAa4574553bcf2380b3",
-        "ulocker": "0x7cA5FB20FDD54867e250436c4A9686ceeB88A18B"
+        "xeth":    "0x82Abd3a19C459829692ceDb1Ce525fB22a9B9B37",
+        "xlocker": "0xb56f00bD5E026913C13db85b8dc5548C7293Da7B"
+    },
+    "ropsten":{
+        "xeth":    "0x9C2C7007B5FC7023d2b8d5E3eA9Aa97c6D6F506F",
+        "xlocker": "0x7ee43A57Dc6c1D46a28140CCFe572011025b583d"
     }
 }

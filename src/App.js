@@ -1,58 +1,82 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import IUETH from './abi/IUETH.json';
-import addresses from './addresses.json';
-import useWeb3Modal from './hooks/useWeb3Modal.js'
-import Header from './components/Header.js'
-import TokenLauncher from './components/TokenLauncher.js'
-import UethWrapper from './components/UethWrapper.js'
-import Info from './components/Info.js'
-import Footer from './components/Footer.js'
-import Modal from './components/Modal.js'
+import { useState, useEffect } from "react";
+import "./App.css";
+import IXETH from "./abi/IXETH.json";
+import addresses from "./addresses.json";
+import useWeb3Modal from "./hooks/useWeb3Modal.js";
+import Header from "./components/Header.js";
+import TokenLauncher from "./components/TokenLauncher.js";
+import XethWrapper from "./components/XethWrapper.js";
+import Info from "./components/Info.js";
+import Footer from "./components/Footer.js";
+import Modal from "./components/Modal.js";
 
 function App() {
-  const [requestConnect, setRequestConnect] = useState(0)
-  const [requestCacheReset, setRequestCacheReset] = useState(null)
-  const {provider, web3, account} = useWeb3Modal(requestConnect,requestCacheReset);
-  const [modalTitle, setModalTitle] = useState(null)
-  const [modalBody, setModalBody] = useState(null)
-  const [isModalVisible, setIsModalVisible] = useState(false)
-  
-  const [accountUeth, setAccountUeth] = useState("0")
-  const [ueth, setUeth] = useState(null)
+  const [requestConnect, setRequestConnect] = useState(0);
+  const [requestCacheReset, setRequestCacheReset] = useState(null);
+  const { provider, web3, account } = useWeb3Modal(
+    requestConnect,
+    requestCacheReset
+  );
+  const [modalTitle, setModalTitle] = useState(null);
+  const [modalBody, setModalBody] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  useEffect(()=>{
-      if(!web3 || !account) return;
-      const ueth = new web3.eth.Contract(
-          IUETH,
-          addresses.mainnet.ueth,
-          {
-              from:account
-          }
-      );
-      setUeth(ueth);
-      (async ()=> {
-          const accountUeth = await ueth.methods.balanceOf(account).call()
-          setAccountUeth(accountUeth)
-      })();
-  },[web3,account])
+  const [accountXeth, setAccountXeth] = useState("0");
+  const [xeth, setXeth] = useState(null);
 
+  useEffect(() => {
+    if (!web3 || !account) return;
+    const xeth = new web3.eth.Contract(IXETH, addresses.mainnet.xeth, {
+      from: account
+    });
+    setXeth(xeth);
+    (async () => {
+      const accountXeth = await xeth.methods.balanceOf(account).call();
+      setAccountXeth(accountXeth);
+    })();
+  }, [web3, account]);
 
   return (
     <div className="App">
-      <Header web3={web3} account={account} accountUeth={accountUeth} requestConnect={requestConnect} setRequestConnect={setRequestConnect} requestCacheReset={requestCacheReset} setRequestCacheReset={setRequestCacheReset} />
-      <br/>
+      <Header
+        web3={web3}
+        account={account}
+        accountXeth={accountXeth}
+        requestConnect={requestConnect}
+        setRequestConnect={setRequestConnect}
+        requestCacheReset={requestCacheReset}
+        setRequestCacheReset={setRequestCacheReset}
+      />
+      <br />
       <h1>U lock what you like!</h1>
       <div className="flex-container">
         <div className="flex-child-2col">
-          <TokenLauncher web3={web3} account={account} setIsModalVisible={setIsModalVisible} setModalTitle={setModalTitle} setModalBody={setModalBody} />
+          <TokenLauncher
+            web3={web3}
+            account={account}
+            setIsModalVisible={setIsModalVisible}
+            setModalTitle={setModalTitle}
+            setModalBody={setModalBody}
+          />
         </div>
         <div className="flex-child-2col">
-          <UethWrapper web3={web3} account={account} setAccountUeth={setAccountUeth} setIsModalVisible={setIsModalVisible} setModalTitle={setModalTitle} setModalBody={setModalBody} />
+          <XethWrapper
+            web3={web3}
+            account={account}
+            setAccountXeth={setAccountXeth}
+            setIsModalVisible={setIsModalVisible}
+            setModalTitle={setModalTitle}
+            setModalBody={setModalBody}
+          />
         </div>
       </div>
       <Info />
-      <Modal title={modalTitle} body={modalBody} isVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>
+      <Modal
+        title={modalTitle}
+        body={modalBody}
+        isVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+      />
       <Footer />
     </div>
   );
