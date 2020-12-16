@@ -1,24 +1,23 @@
 body {
   text-align: center;
   padding:20px;
-  background-color: #0e1515;
-  background-image: url("https://ipfs.fleek.co/ipfs/bafybeia637kuqa56sv4n37sf263ra6sqtdwetjels62ejjvz4ptfuggjne");
+  background-color: #131717;
   font-size: 14px;
-  font-family: Courier, 'Courier New', Consolas, source-code-pro, Menlo, Monaco, monospace;
+  font-family: 'Open Sans', sans-serif;
   color: #dbdbdb;
 }
 
 button {
   background-color: transparent;
-  border: solid 1px #03dddd;
+  border: solid 1px #52CAFF;
   border-radius: 3px;
-  color: #03dddd;
+  color: #52CAFF;
   font-size: 14px;
   padding:10px;
   width:95px;
   padding:10px;
   cursor: pointer;
-  font-family: Courier, 'Courier New', Consolas, source-code-pro, Menlo, Monaco, monospace;
+  font-family: 'Open Sans', sans-serif;
 }
 
 input {
@@ -31,7 +30,7 @@ input {
   border-radius: 3px;
   box-sizing: border-box; 
   color: #dbdbdb;
-  font-family: Courier, 'Courier New', Consolas, source-code-pro, Menlo, Monaco, monospace;
+  font-family: 'Open Sans', sans-serif;
   font-size:18px;
 }
 
@@ -48,7 +47,7 @@ input[type=number] {
 }
 
 button.color-wide {
-  background-color: #03dddd;
+  background-color: #52CAFF;
   color:#0e1515;
   width:100%;
   margin:0px;
@@ -67,7 +66,7 @@ h1 {
   font-weight: lighter;
   margin-top: 40px;
   margin-bottom: 40px;
-  color:#03dddd;
+  color:#52CAFF;
 }
 
 h2 {
@@ -98,7 +97,7 @@ p {
 .flex-child-2col {
   width:35%;
   min-width: 250px;
-  border: solid 1px #03dddd;
+  border: solid 1px #52CAFF;
   border-radius: 5px;
   padding:40px;
   text-align:left;
@@ -117,8 +116,16 @@ p {
 }
 
 .App-header-logo {
-  max-width:170px;
-  width:50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.App-header-logo__sub-text {
+  color: #52CAFF;
+  font-size: 22px;
 }
 
 .App-header-button {
@@ -153,7 +160,7 @@ p {
   margin-top:20vh;
   background-color: #0e1515;
   padding:40px;
-  border: solid 1px #03dddd;
+  border: solid 1px #52CAFF;
   border-radius: 5px;
   box-sizing: border-box;
 }

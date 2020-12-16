@@ -4,11 +4,13 @@ import IXETH from "./abi/IXETH.json";
 import addresses from "./addresses.json";
 import useWeb3Modal from "./hooks/useWeb3Modal.js";
 import Header from "./components/Header.js";
+import Logo from './components/Logo'
 import TokenLauncher from "./components/TokenLauncher.js";
 import XethWrapper from "./components/XethWrapper.js";
 import Info from "./components/Info.js";
 import Footer from "./components/Footer.js";
 import Modal from "./components/Modal.js";
+
 
 function App() {
   const [requestConnect, setRequestConnect] = useState(0);
@@ -48,7 +50,7 @@ function App() {
         setRequestCacheReset={setRequestCacheReset}
       />
       <br />
-      <h1>U lock what you like!</h1>
+      <Logo />
       <div className="flex-container">
         <div className="flex-child-2col">
           <TokenLauncher

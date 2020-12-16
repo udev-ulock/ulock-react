@@ -1,4 +1,5 @@
-import ipfsMediaSrc from "../utils.js";
+import React from 'react'
+import XLock from './xLock.js'
 
 function Header({
   web3,
@@ -10,8 +11,9 @@ function Header({
   setRequestCacheReset
 }) {
   return (
+    <React.Fragment>
     <header className="App-header">
-      <img src={ipfsMediaSrc("logo-h.svg")} className="App-header-logo" />
+      {/* <img src={ipfsMediaSrc("logo-h.svg")} className="App-header-logo" /> */}
       {web3 == null ? (
         <button
           className="App-header-button"
@@ -42,7 +44,9 @@ function Header({
           )}
         </>
       )}
+
     </header>
+    </React.Fragment>
   );
 }
 

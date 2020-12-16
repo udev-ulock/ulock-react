@@ -70,7 +70,7 @@ function TokenLauncher({
       <h2>Token Name</h2>
       <input
         type="text"
-        placeholder="Your New Token"
+        placeholder="Type"
         onChange={(event) => {
           setTokenName(event.target.value);
         }}
@@ -90,7 +90,7 @@ function TokenLauncher({
       <h2>Liq to Lock (xETH)</h2>
       <input
         type="number"
-        placeholder="1000"
+        placeholder="0.0"
         onChange={(event) => {
           setLiqXeth(event.target.value);
         }}

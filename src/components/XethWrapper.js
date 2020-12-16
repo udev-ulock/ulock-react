@@ -139,7 +139,6 @@ function XethWrapper({
       >
         Unwrap
       </button>
-      <p>Circulating xETH is 1:1 backed by ETH.</p>
     </>
   );
 }
